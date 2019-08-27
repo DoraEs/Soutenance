@@ -1,0 +1,68 @@
+\documentclass{beamer}
+
+    \input{preamble}
+    
+\begin{document}
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  Title frame  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - -  Table of content - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\begin{frame}{Outline}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  New Section  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\section{Introduction}
+
+\input{Body/sec1_intro.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  New Section  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\section{Access Control in the IoT}
+
+\input{Body/sec2_access_control.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  New Section  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\section[OATL]{Offline Authorization Token Libraries}
+
+\input{Body/sec3_oatl.tex}
+
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  New Section  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\section{Introducing the blockchain}
+
+\input{Body/sec4_blockchain.tex}
+
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  New Section  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\section[MAAC-B]{Multi-endorsed Attribute Access Control using the Blockchain}
+
+\input{Body/sec5_maac-b.tex}
+
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  New Section  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\section{Conclusion}
+
+\input{Body/sec6_conclu.tex}
+
+
+\end{document}
