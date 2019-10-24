@@ -1,0 +1,118 @@
+\subsection{Motivations \& Architecture}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Use case: federation}
+    \begin{center}
+        \includegraphics[scale=0.36]{Figures/ex_MAAC-B.png}
+    \end{center}
+    ADD Requirements here
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Setting up the system}
+    \begin{center}
+        \includegraphics[scale=0.36]{Figures/MAAC-B_bootstrap.png}
+    \end{center}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Access control overview}
+    \begin{center}
+        \includegraphics[scale=0.36]{Figures/MAAC-B_AC_high_level.png}
+    \end{center}
+\end{frame}
+
+
+\subsection{Blockchain services}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Trust Anchor Service}
+    \begin{center}
+        \only<1>{\includegraphics[scale=0.36]{Figures/TrAnC_1.png}}
+        \only<2>{\includegraphics[scale=0.36]{Figures/TrAnC_2.png}}        
+        \only<3>{\includegraphics[scale=0.36]{Figures/TrAnC_3.png}}
+        \only<4>{\includegraphics[scale=0.36]{Figures/TrAnC_4.png}}
+        \only<5>{\includegraphics[scale=0.36]{Figures/TrAnC_5.png}}
+    \end{center}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+
+\begin{frame}{Policy Service: Policy Contract (PolC)}
+    \begin{center}
+        \only<1>{\includegraphics[scale=0.36]{Figures/PolC_1.png}}
+        \only<2>{\includegraphics[scale=0.36]{Figures/PolC_2.png}}        
+        \only<3>{\includegraphics[scale=0.36]{Figures/PolC_3.png}}
+        \only<4>{\includegraphics[scale=0.36]{Figures/PolC_4.png}}
+    \end{center}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Policy Service: Dispatch Contract (DisC)}
+    \begin{center}
+        \only<1>{\includegraphics[scale=0.36]{Figures/DisC_1.png}}
+        \only<2>{\includegraphics[scale=0.36]{Figures/DisC_2.png}}        
+        \only<3>{\includegraphics[scale=0.36]{Figures/DisC_3.png}}
+    \end{center}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Attribute Service}
+    \begin{center}
+        \only<1>{\includegraphics[scale=0.36]{Figures/AttC_1.png}}
+        \only<2>{\includegraphics[scale=0.36]{Figures/AttC_2.png}}        
+        \only<3>{\includegraphics[scale=0.36]{Figures/AttC_3.png}}
+        \only<4>{\includegraphics[scale=0.36]{Figures/AttC_4.png}}
+    \end{center}
+\end{frame}
+
+\subsection{Access control}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Access control overview}
+    \begin{center}
+        \includegraphics[scale=0.36]{Figures/MAAC-B_AC.png}
+    \end{center}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Trust level computation}
+    \begin{center}
+    \end{center}
+\end{frame}
+
+\subsection{Conclusion}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Summary}
+
+    \begin{table}[ht]
+    \centering
+    \small{
+        %\rowcolors{1}{lightgray}{}
+        \begin{tabular}{|c|c|}
+            \hline
+            Resource efficiency & ? \\ \hline
+            Serverless authorization & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Actuator-compatible & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Revocation (implicit) & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Revocation (explicit) & for token \#1\\ \hline
+            Granularity & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Context-awareness & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            
+            \hline
+            Ease of integration & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Generality & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Modularity & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            
+            \hline
+            Privacy & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Usability & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Auditability & \textcolor{red}{\ding{55}} \\ \hline
+            Governance & \textcolor{red}{Single-head} \\ \hline
+        \end{tabular}
+        }
+        %\caption{Token types}
+    \end{table}
+    
+\end{frame}

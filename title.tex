@@ -1,0 +1,80 @@
+%\PassOptionsToPackage{demo}{graphicx}
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+%\usepackage[export]{adjustbox}
+
+% Used to set the @ character as acceptable to redefined latex
+% macros outside of .sty or .cls files
+\makeatletter
+
+% Used to add a second logo
+\newcommand\titlegraphicii[1]{\def\inserttitlegraphicii{#1}}
+\titlegraphicii{}
+
+% Used to add a third logo
+\newcommand\titlegraphiciii[1]{\def\inserttitlegraphiciii{#1}}
+\titlegraphiciii{}
+
+% Used to add a forth logo
+\newcommand\titlegraphiciiii[1]{\def\inserttitlegraphiciiii{#1}}
+\titlegraphiciiii{}
+
+\setbeamertemplate{title page}
+{
+  \vbox{}
+   {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\hfill\inserttitlegraphicii\hfill\inserttitlegraphiciii\hfill\inserttitlegraphiciiii\par}
+  \begin{centering}
+  \vskip0.25em%
+    % \begin{beamercolorbox}[sep=8pt,center]{institute}
+    %   \usebeamerfont{institute}\insertinstitute
+    % \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}%\vskip0.5em
+    \begin{beamercolorbox}[sep=8pt,center]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+  \end{centering}
+  %\vfill
+}
+
+% use to close the \makeatletter, makes @ a special character again
+\makeatother
+
+
+\author{Presented by Sophie Dram\'e-Maign\'e}
+\title{Blockchain and access control:}
+\subtitle{Towards a more secure Internet of Things}
+\institute{Gemalto \\ T\'el\'ecom SudParis}
+\date{November 12, 2019}
+\titlegraphic{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/gemalto_brand_fullcol_hr.jpg}}
+\titlegraphicii{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/logo-paris-saclay.jpg}}
+\titlegraphiciii{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/logo_tsp_new.png}}
+\titlegraphiciiii{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/logo_samovar.png}}
+
+\begin{document}
+
+\begin{frame}[plain]
+\maketitle
+\small
+{\centering\itshape Jury\par}
+\vskip 2mm
+\begin{tabular}{l l l l}
+Hella Kaffel-Ben Ayed & \emph{Examiner} & Samia Bouzefrane & \emph{Reviewer}\\
+Laurent Castillo & \emph{Examinator} & Joaquin Garcia-Alfaro & \emph{President} \\
+Pascal Lafourcade & \emph{Reviewer} & Maryline Laurent & \emph{Advisor}\\
+Michel B\'eziat & \emph{Invited} & &\\
+\end{tabular}%
+\end{frame}
+
+\end{document}

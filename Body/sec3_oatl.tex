@@ -1,0 +1,142 @@
+% - - - - - - - - - - SUBSECTION - - - - - - - - - - %
+\subsection{Motivation \& Architecture}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Application requirements}
+    \begin{center}
+        \includegraphics[scale=0.33]{Figures/ex_intro.png}
+    \end{center}
+    
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item Resource efficiency
+            \item Serverless authorization
+            \item Actuator-compatible
+            \item Revocation
+            \item Granularity
+            \item Context-awareness
+        \end{itemize}
+    \end{multicols}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{IoT vendor requirements}
+    \begin{center}
+        \includegraphics[scale=0.33]{Figures/ex_intro.png}
+    \end{center}
+    
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item Ease of integration
+        \item Generality
+        \item Modularity
+    \end{itemize}
+    \end{multicols}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Architecture: PDP/PEP hybrid}
+    \begin{center}
+        \only<1>{\includegraphics[scale=0.38]{Figures/OATL_pre_archi.png}}      \only<2>{\includegraphics[scale=0.38]{Figures/OATL_archi.png}}
+        
+        \end{center}
+\end{frame}
+
+% - - - - - - - - - - SUBSECTION - - - - - - - - - - %
+\subsection{Access control process}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Token request}
+    \begin{center}
+        \only<1>{\includegraphics[scale=0.4]{Figures/token_request_1.png}}
+        \only<2>{\includegraphics[scale=0.4]{Figures/token_request_2.png}}        
+        \only<3>{\includegraphics[scale=0.4]{Figures/token_request_3.png}}        
+        \only<4>{\includegraphics[scale=0.4]{Figures/token_request_4.png}}
+        \only<5>{\includegraphics[scale=0.4]{Figures/token_request_5.png}}
+    \end{center}
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Access request}
+    \begin{center}
+        \only<1>{\includegraphics[scale=0.33]{Figures/access_request_1.png}}
+        \only<2>{\includegraphics[scale=0.33]{Figures/access_request_2.png}}        
+        \only<3>{\includegraphics[scale=0.33]{Figures/access_request_3.png}}        
+        \only<4>{\includegraphics[scale=0.33]{Figures/access_request_4.png}}
+        \only<5>{\includegraphics[scale=0.33]{Figures/access_request_5.png}}
+        \only<6>{\includegraphics[scale=0.33]{Figures/access_request_6.png}}
+        \only<7>{\includegraphics[scale=0.33]{Figures/access_request_7.png}}
+        \only<8>{\includegraphics[scale=0.33]{Figures/access_request_8.png}}
+        \only<9>{\includegraphics[scale=0.33]{Figures/access_request_9.png}}
+        \only<10>{\includegraphics[scale=0.33]{Figures/access_request_10.png}}
+        \only<11>{\includegraphics[scale=0.33]{Figures/access_request_11.png}}
+        \only<12>{\includegraphics[scale=0.33]{Figures/access_request_12.png}}
+    \end{center}
+\end{frame}
+
+% - - - - - - - - - - SUBSECTION - - - - - - - - - - %
+\subsection{Token types}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Token types}
+    \begin{table}[ht]
+    \centering
+    \small{
+        \rowcolors{1}{lightgray}{}
+        \begin{tabular}{c|c|c|}
+        \cline{2-3}
+                                                  & Token \#1                                                                      & Token \#2               \\ \hline
+        \multicolumn{1}{|c|}{Cryptography}        & Pre-shared key                                                                 & Public/Private key pair \\ \hline
+        \multicolumn{1}{|c|}{Credentials}         & \begin{tabular}[c]{@{}c@{}}One key per token\\ (derived from PSK)\end{tabular} & One pair per token      \\ \hline
+        \multicolumn{1}{|c|}{Token authenticity}  & HMAC                                                                           & Signed by issuer        \\ \hline
+        \multicolumn{1}{|c|}{Authentication}      & Challenge                                                                      & Challenge               \\ \hline
+        \multicolumn{1}{|c|}{Time Awareness}      & No                                                                             & Yes                     \\ \hline
+        \multicolumn{1}{|c|}{Implicit Revocation} & \begin{tabular}[c]{@{}c@{}}Number of use \\ Validity window\end{tabular}       & Expiration time         \\ \hline
+        \multicolumn{1}{|c|}{Explicit Revocation} & Validity window update                                                         & TBD                     \\ \hline
+        \end{tabular}
+        }
+        %\caption{Token types}
+    \end{table}
+\end{frame}
+
+% - - - - - - - - - - SUBSECTION - - - - - - - - - - %
+\subsection{Conclusion}
+
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Summary}
+
+    \begin{table}[ht]
+    \centering
+    \small{
+        %\rowcolors{1}{lightgray}{}
+        \begin{tabular}{|c|c|}
+            \hline
+            Resource efficiency & ? \\ \hline
+            Serverless authorization & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Actuator-compatible & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Revocation (implicit) & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Revocation (explicit) & for token \#1\\ \hline
+           Granularity & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Context-awareness & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            
+            \hline
+            Ease of integration & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Generality & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Modularity & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            
+            \hline
+            Privacy & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Usability & \textcolor{ao(english)}{\ding{51}} \\ \hline
+            Auditability & \textcolor{red}{\ding{55}} \\ \hline
+            Governance & \textcolor{red}{Single-head} \\ \hline
+        \end{tabular}
+        }
+        %\caption{Token types}
+    \end{table}
+    
+\end{frame}
+
+% * * * * * * NEW FRAME * * * * * * %
+% \begin{frame}{Perspectives}
+    
+% \end{frame}

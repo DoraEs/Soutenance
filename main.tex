@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[table]{beamer}
 
     \input{preamble}
     
@@ -7,8 +7,23 @@
 % - - - - - - - - - - - - - - - - - - - - - %
 % - - - - - - -  Title frame  - - - - - - - %
 % - - - - - - - - - - - - - - - - - - - - - %
-\begin{frame}
-  \titlepage
+% \begin{frame}
+%   \titlepage
+  
+% \end{frame}
+
+\begin{frame}[plain]
+\maketitle
+%\titlepage
+\small
+{\centering\itshape In front of the jury\par}
+\vskip 2mm
+\begin{tabular}{l l l l}
+Joaquin Garcia-Alfaro & \emph{President} & Samia Bouzefrane & \emph{Reviewer}\\
+Laurent Castillo & \emph{Examiner} &  Hella Kaffel-Ben Ayed & \emph{Examiner}\\
+Pascal Lafourcade & \emph{Reviewer} & Maryline Laurent & \emph{Advisor}\\
+Michel B\'eziat & \emph{Invited} & &\\
+\end{tabular}%
 \end{frame}
 
 % - - - - - - - - - - - - - - - - - - - - - %
@@ -63,6 +78,15 @@
 \section{Conclusion}
 
 \input{Body/sec6_conclu.tex}
+
+% - - - - - - - - - - - - - - - - - - - - - %
+% - - - - - - -  Biblio  - - - - - - - %
+% - - - - - - - - - - - - - - - - - - - - - %
+\begin{frame}[allowframebreaks]
+        \frametitle{References}
+        \bibliographystyle{amsalpha}
+        \bibliography{biblio.bib}
+\end{frame}
 
 
 \end{document}

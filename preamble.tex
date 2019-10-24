@@ -1,3 +1,40 @@
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{calc,blindtext}
+\usepackage{pifont}
+
+
+%\usepackage[table]{xcolor}
+
+
+% Colors %
+
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\definecolor{Green}{rgb}{0.67,0.88,0.69}
+\definecolor{Yellow}{rgb}{1,0.88,0.21}
+\definecolor{champagne}{rgb}{0.97, 0.91, 0.81}
+
+\newcolumntype{t}{>{\columncolor{champagne}}c}
+\newcolumntype{b}{>{\columncolor{Gray}}c}
+\newcolumntype{w}{>{\columncolor{white}}c}
+\newcolumntype{T}[1]{>{\centering\columncolor{champagne}\hspace{0pt}}m{#1}}
+\newcolumntype{B}[1]{>{\centering\columncolor{Gray}\hspace{0pt}}m{#1}}
+\newcolumntype{W}[1]{>{\centering\columncolor{white}\hspace{0pt}}m{#1}}
+
+% Highlighting text
+\newcommand<>\highlightbox[2]{%
+  \alt#3{\makebox[\dimexpr\width-2\fboxsep]{\colorbox{#1}{#2}}}{#2}%
+}
+
+
 %
 % Choose how your presentation looks.
 %
@@ -13,30 +50,100 @@
   \setbeamertemplate{caption}[numbered]
 } 
 
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage{xcolor}
-\usepackage{listings}
-\lstset
+
+%\usepackage{xcolor}
+
+%\usepackage[export]{adjustbox}
+% \usepackage{listings}
+% \lstset
+% {
+%     language=[LaTeX]TeX,
+%     breaklines=true,
+%     basicstyle=\tt\scriptsize,
+%     %commentstyle=\color{green}
+%     keywordstyle=\color{blue},
+%     %stringstyle=\color{black}
+%     identifierstyle=\color{magenta},
+% }
+
+\definecolor{lightgray}{gray}{0.9}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % %  MAKING TITLE PAGE  % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% Used to set the @ character as acceptable to redefined latex
+% macros outside of .sty or .cls files
+\makeatletter
+
+% Used to add a second logo
+\newcommand\titlegraphicii[1]{\def\inserttitlegraphicii{#1}}
+\titlegraphicii{}
+
+% Used to add a third logo
+\newcommand\titlegraphiciii[1]{\def\inserttitlegraphiciii{#1}}
+\titlegraphiciii{}
+
+% Used to add a forth logo
+\newcommand\titlegraphiciiii[1]{\def\inserttitlegraphiciiii{#1}}
+\titlegraphiciiii{}
+
+\setbeamertemplate{title page}
 {
-    language=[LaTeX]TeX,
-    breaklines=true,
-    basicstyle=\tt\scriptsize,
-    %commentstyle=\color{green}
-    keywordstyle=\color{blue},
-    %stringstyle=\color{black}
-    identifierstyle=\color{magenta},
+  \vbox{}
+  {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\hfill\inserttitlegraphicii\hfill\inserttitlegraphiciii\hfill\inserttitlegraphiciiii\par}
+  \begin{centering}
+  \vskip0.25em%
+    % \begin{beamercolorbox}[sep=8pt,center]{institute}
+    %   \usebeamerfont{institute}\insertinstitute
+    % \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+
+    \begin{beamercolorbox}[sep=8pt,center]{author}
+        \emph{Presented by} \newline
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+        \emph{on}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}%\vskip0.5em
+    \end{centering}
+  %\vfill
 }
 
-\title[Thesis Defense]{Blockchain and access control: \newline Towards a more secure Internet of Things}
-\author{Sophie Dramé-Maigné}
-\institute{Gemalto/Télécom SudParis}
-\date{12 novembre 2019}
+% use to close the \makeatletter, makes @ a special character again
+\makeatother
+
+% Setting 
+\author[Thesis Defense]{Sophie Dram\'e-Maign\'e}
+\title{Blockchain and access control}
+\subtitle{Towards a more secure Internet of Things}
+\institute[Gemalto \& TSP]{Gemalto \\ T\'el\'ecom SudParis}
+\date{November 12, 2019}
+
+% Logo
+\titlegraphic{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/gemalto_brand_fullcol_hr.jpg}}
+\titlegraphicii{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/logo-paris-saclay.jpg}}
+\titlegraphiciii{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/logo_tsp_new.png}}
+\titlegraphiciiii{\includegraphics[height=1cm,width=2cm,keepaspectratio]{Figures/logo_samovar.png}}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % %  END OF TITLE PAGE  % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 
 \AtBeginSection[]
 {
   \begin{frame}<beamer>
     \frametitle{Outline}
-    \tableofcontents[currentsection,currentsubsection]
+    \tableofcontents[currentsection,currentsubsection,subsectionstyle=show/show/hide,subsubsectionstyle=hide]
   \end{frame}
 }
