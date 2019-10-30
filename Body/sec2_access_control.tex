@@ -1,5 +1,5 @@
 % - - - - - - - - - - SUBSECTION - - - - - - - - - - %
-\subsection{The fundamentals}
+\subsection{The fundamentals of access control}
 
 % * * * * * * NEW FRAME * * * * * * %
 \begin{frame}{Glossary of access control: use case}
@@ -68,19 +68,6 @@
     \end{definition}
 \end{frame}
 
-
-% % * * * * * * NEW FRAME * * * * * * %
-% \begin{frame}{The building blocks}
-%     \begin{definition}
-%     \begin{itemize}
-%         \item The \alert{PDP (Policy Decision Point~\cite{RFC2753})} is where decisions are made.
-%         \item The \alert{PEP (Policy Enforcement Point~\cite{RFC2753})} is where decisions are actually enforced.
-%         \item The \alert{PIP (Policy Information Point~\cite{hu2013guide})} delivers information required for the access decision.
-%         \item The \alert{PAP (Policy Administration Point~\cite{RFC3198})} creates the access policies.
-%     \end{itemize}
-%     \end{definition}
-% \end{frame}
-
 % * * * * * * NEW FRAME * * * * * * %
 \begin{frame}{The building blocks of access control}
     \only<1>{
@@ -148,7 +135,7 @@
 \end{frame}
 
 % * * * * * * NEW FRAME * * * * * * %
-\begin{frame}{Centralized architecture: What it looks like}
+\begin{frame}{Centralized architecture: circumventing resource scarcity}
     \begin{center}
         \includegraphics[scale=0.33]{Figures/central_archi.png}
     \end{center}
@@ -159,14 +146,13 @@
 % * * * * * * NEW FRAME * * * * * * %
 \begin{frame}{Hierarchical architecture: Spacial or Logical separation}
     \begin{center}
-        \only<1>{\includegraphics[scale=0.36]{Figures/hierarchical_archi_uni.png}}
-        \only<2>{\includegraphics[scale=0.36]{Figures/hierarchical_archi_office.png}}        
+        \includegraphics[scale=0.36]{Figures/hierarchical_archi_car.png}        
         \end{center}
 \end{frame}
 
 
 % * * * * * * NEW FRAME * * * * * * %
-\begin{frame}{Federated architecture: What it looks like}
+\begin{frame}{Federated architecture: joining security domains}
     \begin{center}
         \includegraphics[scale=0.4]{Figures/federated_archi.png}
     \end{center}    
@@ -174,7 +160,7 @@
 
 
 % * * * * * * NEW FRAME * * * * * * %
-\begin{frame}{Distributed architecture: Hybrid architecture}
+\begin{frame}{Distributed architecture 1: Hybrid architecture}
     \begin{center}
         \includegraphics[scale=0.35]{Figures/hybrid_archi.png}
     \end{center}    
@@ -182,7 +168,7 @@
 
 
 % * * * * * * NEW FRAME * * * * * * %
-\begin{frame}{Distributed architecture: Multi PDP architecture}
+\begin{frame}{Distributed architecture 2: Multi PDP architecture}
     \begin{center}
         \includegraphics[scale=0.4]{Figures/multiPDP_archi.png}
     \end{center}    
@@ -190,7 +176,7 @@
 
 
 % * * * * * * NEW FRAME * * * * * * %
-\begin{frame}{Distributed architecture: Blockchain-based architecture}
+\begin{frame}{Distributed architecture 3: Blockchain-based architecture}
     \begin{center}
         \includegraphics[scale=0.35]{Figures/bc_archi_alt.png}
     \end{center}    
@@ -226,12 +212,6 @@
 \colorbox{lightgray}{\makebox[\textwidth-2\fboxsep][c]{\emph{\textcolor{orange}{O}: Objective
  - \textcolor{purple}{C}: Comparative}}}
 
-% \begin{center}
-%     \colorbox{lightgray}{\textcolor{orange}{O}: Objective
-%  - \textcolor{purple}{C}: Comparative}
-% \end{center}
-
-
 \end{frame}
 
 % * * * * * * NEW FRAME * * * * * * %
@@ -250,7 +230,7 @@
          	\hline
          	\hline
          %%% META CRITERIA %%%
-         Resource Efficiency        & +		& ++ 	& +     & +  	& -  	& - -  &  - -   \\  \arrayrulecolor{black!30}\hline
+         Resource Efficiency        & +		& \highlightbox<1>{red}{++} 	& +     & +  	& -  	& - -  &  - -   \\  \arrayrulecolor{black!30}\hline
          Resilience 				& -		& - - 	& +     & +  	& ++ 	& -    &  ++    \\  \arrayrulecolor{black!30}\hline
          Scalability 				& -		& - - 	& +     & +  	& ++ 	& -    &  +     \\  \arrayrulecolor{black!30}\hline
          Maintainability 		    & ++	& +		& -     & - -   & - -   &      &  +     \\  \arrayrulecolor{black!30}\hline
@@ -280,38 +260,37 @@
 % - - - - - - - - - - SUBSECTION - - - - - - - - - - %
 \subsection{Conclusion}
 
-% % * * * * * * NEW FRAME * * * * * * %
-% \begin{frame}{Litterature review}
-%     \begin{table}[ht!]
-% \center
-% {tiny
-%  \begin{tabular}{!{\color{black}\vrule} w w B{1.75cm} W{1.4cm}  b B{1cm} b!{\color{black}\vrule}}
-%   \hline
-%  \multicolumn{2}{w}{Centralized} &  &  & \multicolumn{3}{b|}{Distributed}\\
-%   Serverless & Not serverless & \multirow{-2}{*}{Hierarchical}& \multirow{-2}{*}{Federated}& multi PDP & Hybrid & Blockchain \\
-% 	\hline
-% 	\hline
-% %%% META CRITERIA %%%
-% \cite{tamboli2016secure}        & \cite{fernandez2017model} & \cite{barka2015securing}     & \cite{AnggorojatiMahallePrasadEtAl2012}  	& \cite{wu2017implementation}  	& \cite{hemdi2016using}  &  \cite{ZyskindNathanPentland2015}  \\  \arrayrulecolor{black!30}
-% \cite{RotondiSecciaPiccione2011}& \cite{bandara2016access}  & \cite{ning2015aggregated}     & \cite{xu2018federated}  	& \cite{fotiou2016access} 	& \cite{bernabe2016taciot}    &  \cite{ouaddah2016fairaccess}  \\  \arrayrulecolor{black!30}
-% \cite{HummenShafaghRazaEtAl2014}& \cite{ashibani2017context}& \cite{castiglione2016cryptographic}     & \cite{liu2017access}  	& \cite{patel2016energy} 	& \cite{hussein2017access}    &  \cite{novo2018blockchain}   \\  \arrayrulecolor{black!30}
-% \cite{ray2017using}	            & \cite{hao2019fine}		& \cite{hsiao2019elliptic}     & \cite{uriarte2016sensing}  &    &  \cite{cerf2015access} & \cite{pinno2017controlchain}  \\  \arrayrulecolor{black!30}
-% \cite{ahmad2018lazy} 	        & \cite{yan2019iot}     	&   &\cite{saadeh2018hierarchical} &     & \cite{SeitzSelanderGehrmann2013}    & \cite{xu2018blendcac}    \\  \arrayrulecolor{black!30}
-%  	    &  		&       & \cite{sciancalepore2018design} 	&    	& \cite{Hernandez-RamosJaraMarinEtAl2013} &  \cite{zhang2018smart}  \\  \arrayrulecolor{black!30}\hline
-% \end{tabular}
-% }
-% % \caption{Comparison of architectures}\label{archiCompTable}
-% \end{table}
-% \end{frame}
 
 
 % * * * * * * NEW FRAME * * * * * * %
-\begin{frame}{Challenges and perspectives}
+\begin{frame}{Our goals}
     \begin{itemize}
-        \item \alert{Serverless authorization}
-        \item \alert{Blockchain-based system}
-        \item \alert{Usability}
-        \item \alert{Flexibility}
+        \item[$\rightarrow$] Reduce dependence to a central server
+        \begin{itemize}
+            \item Serverless authorization
+            \item Blockchain-based system
+        \end{itemize}
+        \item[$\rightarrow$] Increase usability
+        \begin{itemize}
+            \item for users
+            \item for vendors
+            \item for administrators
+        \end{itemize}
+        \item[$\rightarrow$] Offer flexibility
+        \begin{itemize}
+            \item accept dynamic users
+            \item accommodate changes in organizations
+            \item adapt to different use cases
+        \end{itemize}
+        % \item[$\rightarrow$] Blockchain-based system
+        
+        
     \end{itemize}
 \end{frame}
 
+% * * * * * * NEW FRAME * * * * * * %
+\begin{frame}{Outline}
+    \begin{center}
+        \includegraphics[scale=0.47]{Figures/Outline.png}
+    \end{center}
+\end{frame}
